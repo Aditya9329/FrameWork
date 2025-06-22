@@ -24,4 +24,29 @@ public class LoginPage extends BasePage{
 	@FindBy(xpath="//button[text()='Signup']")
 	WebElement clickSignupButton;
 	
+	
+	public void check_newUserSignUpText()
+	{
+		newUserSignUpText.getText();
+	}
+	
+	
+	public void enterUserName(String username)
+	{
+		enterUserName.sendKeys(username);
+	}
+	
+	public void enterUserEmails(String email)
+	{
+		enterUserEmails.sendKeys(email);
+	}
+	
+	public void clickSignupButton()
+	{
+		clickSignupButton.click();
+	}
+	
+	
+	
+	
 }

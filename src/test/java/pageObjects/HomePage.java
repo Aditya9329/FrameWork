@@ -19,9 +19,6 @@ public class HomePage extends BasePage {
 	WebElement linkSignInSingnUp;
 	
 	
-	
-	
-	
 	@FindBy(xpath="//b")
 	WebElement checkUsername;
 	
@@ -30,5 +27,36 @@ public class HomePage extends BasePage {
 	
 	@FindBy(xpath="//b[text()='Account Deleted!']")
 	WebElement verifyAccountDeleted;
+	
+	
+	
+	public void verifyHome()
+	{
+		home.getText();
+	}
+	
+	public void linkSignInSingnUp()
+	{
+		linkSignInSingnUp.click();
+	}
+	
+	public void checkUsername()
+	{
+		checkUsername.getText();
+	}
+	
+	public void clickOnDeleteAccount()
+	{
+		clickOnDeleteAccount.click();
+	}
+	
+	public void verifyAccountDeleted()
+	{
+		verifyAccountDeleted.click();
+	}
+	
+	
+	
+	
 
 }

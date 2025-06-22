@@ -15,7 +15,18 @@ public class AccountCreatedPage extends BasePage {
 	@FindBy(xpath="//b[text()='Account Created!']")
 	WebElement checkAccountCreatedMessage;
 	
+	
+	public void checkAccountCreatedMessage()
+	{
+		checkAccountCreatedMessage.getText();
+	}
+	
 	@FindBy(xpath="//a[text()='Continue']")
 	WebElement clickOnContinueButton;
+	
+	public void clickOnContinueButton()
+	{
+		clickOnContinueButton.click();
+	}
 	
 }
