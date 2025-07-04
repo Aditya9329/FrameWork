@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 public class AccountCreatedPage extends BasePage {
 
 	
-	AccountCreatedPage(WebDriver driver)
+	public AccountCreatedPage(WebDriver driver)
 	{
 		super(driver);
 	}
@@ -16,9 +16,9 @@ public class AccountCreatedPage extends BasePage {
 	WebElement checkAccountCreatedMessage;
 	
 	
-	public void checkAccountCreatedMessage()
+	public boolean checkAccountCreatedMessage()
 	{
-		checkAccountCreatedMessage.getText();
+		return checkAccountCreatedMessage.isDisplayed();
 	}
 	
 	@FindBy(xpath="//a[text()='Continue']")

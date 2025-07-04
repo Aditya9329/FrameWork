@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-07-04T23:09:05 IST" name="Default suite" finished-at="2025-07-04T23:09:48 IST" duration-ms="42962">
+    <groups>
+    </groups>
+    <test started-at="2025-07-04T23:09:05 IST" name="Default test" finished-at="2025-07-04T23:09:48 IST" duration-ms="42962">
+      <class name="testCases.Account_Registration_TC001">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.Account_Registration_TC001@21282ed8]" started-at="2025-07-04T23:09:05 IST" name="setup" finished-at="2025-07-04T23:09:19 IST" duration-ms="14183" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verify_account_registration_TC001()[pri:0, instance:testCases.Account_Registration_TC001@21282ed8]" started-at="2025-07-04T23:09:19 IST" name="verify_account_registration_TC001" finished-at="2025-07-04T23:09:47 IST" duration-ms="27919" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_account_registration_TC001 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.Account_Registration_TC001@21282ed8]" started-at="2025-07-04T23:09:47 IST" name="tearDown" finished-at="2025-07-04T23:09:48 IST" duration-ms="678" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testCases.Account_Registration_TC001 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

@@ -3,11 +3,12 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 public class SignUpDetailsPage extends BasePage {
 
 	
-	SignUpDetailsPage(WebDriver driver)
+	public SignUpDetailsPage(WebDriver driver)
 	{
 		super(driver);
 	}
@@ -16,9 +17,9 @@ public class SignUpDetailsPage extends BasePage {
 	@FindBy(xpath="//h2/b[text()='Enter Account Information']")
 	WebElement enterAccountInformationText;
 	
-	public void enterAccountInformationText()
+	public String enterAccountInformationText()
 	{
-		enterAccountInformationText.getText();
+		return enterAccountInformationText.getText();
 	}
 	
 	@FindBy(xpath="//input[@id='id_gender1']")
@@ -40,25 +41,32 @@ public class SignUpDetailsPage extends BasePage {
 	@FindBy(xpath="//select[@id='days']")
 	WebElement enterDays;
 	
-	public void enterDays()
+	public void enterDays(String day)
 	{
 		enterDays.click();
+		Select days = new Select(enterDays);
+		days.selectByVisibleText(day);
+		
 	}
 	
 	@FindBy(xpath="//select[@id='months']")
 	WebElement enterMonths;
 	
-	public void enterMonths()
+	public void enterMonths(String mon)
 	{
 		enterMonths.click();
+		Select month = new Select(enterMonths);
+		month.selectByVisibleText(mon);
 	}
 	
 	@FindBy(xpath="//select[@id='years']")
 	WebElement enterYears;
 	
-	public void enterYears()
+	public void enterYears(String year)
 	{
 		enterYears.click();
+		Select Years = new Select(enterYears);
+		Years.selectByVisibleText(year);
 	}
 	
 	
@@ -67,7 +75,7 @@ public class SignUpDetailsPage extends BasePage {
 	@FindBy(xpath="//label[text()='Sign up for our newsletter!']")
 	WebElement check_signupforournewsletter;
 	
-	void check_signupforournewsletter()
+	public void check_signupforournewsletter()
 	{
 		check_signupforournewsletter.click();
 	}

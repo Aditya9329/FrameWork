@@ -30,9 +30,9 @@ public class HomePage extends BasePage {
 	
 	
 	
-	public void verifyHome()
+	public String verifyHome()
 	{
-		home.getText();
+		return home.getText();
 	}
 	
 	public void linkSignInSingnUp()

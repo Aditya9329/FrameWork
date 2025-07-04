@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage{
 
-	LoginPage(WebDriver driver)
+	public LoginPage(WebDriver driver)
 	{
 		super(driver);
 	}
@@ -18,16 +18,16 @@ public class LoginPage extends BasePage{
 	@FindBy(xpath="//input[@name='name']")
 	WebElement enterUserName;
 	
-	@FindBy(xpath="//input[@name='email']")
+	@FindBy(xpath="//input[@name='email' and @data-qa='signup-email']")
 	WebElement enterUserEmails;
 	
 	@FindBy(xpath="//button[text()='Signup']")
 	WebElement clickSignupButton;
 	
 	
-	public void check_newUserSignUpText()
+	public String check_newUserSignUpText()
 	{
-		newUserSignUpText.getText();
+		return newUserSignUpText.getText();
 	}
 	
 	
