@@ -1,44 +1,24 @@
 package testCases;
 
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
-
-import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import pageObjects.AccountCreatedPage;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
 import pageObjects.SignUpDetailsPage;
+import testBase.BaseClass;
 
-public class Account_Registration_TC001 {
-	WebDriver driver;
+public class Account_Registration_TC001 extends BaseClass {
 	
-	@BeforeClass
-	public void setup()
-	{
-		driver = new ChromeDriver();
-		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.get("https://automationexercise.com/");
-		driver.manage().window().maximize();
-	}
 	
-	@AfterClass
-	public void  tearDown()
-	{
-		driver.close();
-	}
 	
-	@Test
+	@Test(groups="sanity")
 	public void verify_account_registration_TC001() throws InterruptedException
 	{
+		
+		 logger.info("*******Starting Account_Registration_TC001 ***********"); 
 		HomePage hp = new HomePage(driver);
 		hp.verifyHome();
 		hp.linkSignInSingnUp();
@@ -47,18 +27,25 @@ public class Account_Registration_TC001 {
 		LoginPage lp = new LoginPage(driver);
 		String signupText = lp.check_newUserSignUpText();
 		Assert.assertEquals(signupText,"New User Signup!");
-		lp.enterUserName("aa22vv");
-		lp.enterUserEmails("aa22vxxv@gmail.com");
+		lp.enterUserName("aa292vv");
+		 logger.info("Username entered successfully"); 
+		lp.enterUserEmails("aa527792vxxv@gmail.com");
+		 logger.info("Email entered successfully"); 
 		lp.clickSignupButton();
-		
+		 logger.info("Signup button clicked successfully"); 
 		SignUpDetailsPage sudp = new SignUpDetailsPage(driver);
 		String heading  = sudp.enterAccountInformationText();
-		/* Assert.assertEquals(heading, "Enter Account Information"); */
+		 Assert.assertEquals(heading, "Enter Account Information"); 
 		sudp.enterTitleMr();
+		 logger.info("Title entered"); 
 		sudp.enterPassword("12345");
+		 logger.info("Password entered"); 
 		sudp.enterDays("1");
+		 logger.info("Days entered"); 
 		sudp.enterMonths("January");
+		 logger.info("Month entered"); 
 		sudp.enterYears("2021");
+		 logger.info("Year entered"); 
 		Thread.sleep(3000);
 		sudp.checkbox_Receivespecialoffersfromourpartners();
 		sudp.check_signupforournewsletter();
@@ -73,7 +60,7 @@ public class Account_Registration_TC001 {
 		sudp.enterMobileNumber("776655443");
 		sudp.selectCountries();
 		sudp.clickCreateAccount();
-		
+		 logger.info("create account clicked"); 
 		AccountCreatedPage acp = new AccountCreatedPage(driver);
 		boolean isMessageDisplayed = acp.checkAccountCreatedMessage();
 		Assert.assertTrue(isMessageDisplayed);
